@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "binance-358717",
+  "private_key_id": "02afa1d4163d03c542707dabbb7daad6cfb158da",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCWeNuUEPPlEKyq\n6H33UNlDmT4pFvdXKp+d2DNnnhoQIReIgxuFK3XttqWX/EPgJP+eVjuKmgG3dUw2\neXur28AZwB/or42xrcWOhqd+b1fCRUQVRRXZMMDlGJSnjPZ/7YRYroqU+GkEjmqf\nOPXxefovbo7ajpsNNLctSFGR5BLsDBnr+V9SvnUp3ckiCoSK5oL3QbSDD+tNLB+y\nFsfw6mG5AlDqCHtyCONYJkcfqj7vf9zPS9wJOh4rSA+BG7uxZbNZECjJhre7HT3v\nB9qjF0ETd9NMUuI4WiUaelm3QIKxu3aoBqe9Obo4TZYmaJyAHdtoFTNlFtGmAYqz\nw8CSSpnHAgMBAAECggEALuebousp69SnzlrMsWRNZYoGW26iSVSrDtwPIhShkTeP\ni2k7Eeb7Ss9tjRQA4IUH/YZp5wmc0WBKEo0J5QeKOTyvdawLokBF3ejRm1L/6zoG\nQA8aAWr2JjPkWtpRGI2kfLRj1I4exmHSkLGD0PMx7skq1KwxXwt4si/h5XVQBK5C\noNRsaSyHXMHcBhw1Mqrf6CRofN5S5IV7WyQrxa3DMi8qbZntcQXkq9yTGRlNU+xl\nxsDNvWos2UCBMAfIUaWUuaEpsjmmhertaaNik1Hm6gzm0SqedpKVPJ91D3ZE0utO\nmvYOXE0bnMoRMdj4xi5JIe1juczMUdPxYKx7xdiZoQKBgQDHxrPvNnLi1lnarCQa\nrAJq3aQqcVJWd6NYhwVTOECLVgEoag6Z02b4E6p2s2sH2GL2M9+SVv+LWsi8GnUE\no7kwuoMPpcrWmQ56/J29A0ZnO4zeYbliwhKs66Ja6tFJDl5IxHnyakrBrBXiY9hD\n60iC/Nypd5q1OWd4kQCMq6uKdwKBgQDA0fAlxJcNh4rJ7rXjjNxeIwKFOpHQGJvw\nk3i6CIfXg+T3xNsN1JM8fD6THJsp8TWduUcQY2Vjqqx7lPRUNuPn8awL05rjTmzN\n14zWRnmRc4UkbxL0edzOZSUxBk/eVVsHo+hrj5Ds3rO2ERt8F8iig1/dtX0jGHOV\nvkn+zVDvMQKBgQCq1rWQ31MnwH5ejc7iMC5xDNESqo3q+6xoTC61l+k6PnYHBYsu\n6KWph8fCcnQY5WbbfEi4cEVf+mam1Uk0in4XuafSfckT8xd6/QQ3WtGd/kLc+Vz7\no1MtJORWM3B9tRfTypEuSM9dB7g/PXr3ugDsYyigk3NtfoWJiRabNUMgyQKBgA8E\nSp+mX9094SE45hGCtubd8yRNG24JfJuP4KccYvf13a8uNaEuHQlo47axU6RAlNxj\nwZUVKKBKeoRlZWHppHY77Bo/sKBjSzX8w4sskesyA/yCageANiIc3nii9TVrkFtX\n+JHn7HGGJpjXXDyd3ZJKiPzLVaOWE+pll32wn80BAoGBAMFjuecCkotqD/V2HTlC\n/I2A0CXMdKcH4L9Y9udBzJmaTc+cx7t6T3oJ29psyl7nV7AJLaAAzt4EUuzf3t+S\nFvsY/B88oK/wXqJgtzLGlY0sCMwwCJBXup0QgX1e9ee+ABPbmJBP52ibjnSTjSnX\n9urPObewCNuv+S7kyX8kNaVZ\n-----END PRIVATE KEY-----\n",
+  "client_email": "account@binance-358717.iam.gserviceaccount.com",
+  "client_id": "110644586958095454352",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/account%40binance-358717.iam.gserviceaccount.com"
+}
