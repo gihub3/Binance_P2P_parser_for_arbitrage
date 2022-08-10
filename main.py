@@ -1,10 +1,4 @@
-from requests import get
+from google_sheets import start_spreadsheet
 
-url = "https://p2p.binance.com/ru/advertiserDetail"
-params = {
-    "advertiserNo": "s128bce2116883c5da748ccea16e594a5"
-}
-
-r = get(url, params=params)
-print(r)
-print(r.url)
+if __name__ == '__main__':
+    start_spreadsheet()

@@ -1,4 +1,4 @@
-from itertools import combinations
+from itertools import combinations_with_replacement
 
 CREDENTIALS_FILE = 'creds.json'
 
@@ -9,9 +9,8 @@ ASSETS = [
     "ETH"
 ]
 
-combinations = list(combinations(ASSETS, 2))
-ALL_ASSET_COUPLES = combinations + list(map(lambda x: x[::-1], combinations))
-
+combinations = list(combinations_with_replacement(ASSETS, 2))
+ALL_ASSET_COUPLES = list(set(combinations + list(map(lambda x: x[::-1], combinations))))
 # BANKS_RUS = [
 #     "Тинькофф",
 #     "Росбанк",
@@ -21,8 +20,23 @@ ALL_ASSET_COUPLES = combinations + list(map(lambda x: x[::-1], combinations))
 
 BANKS_EN_RUS = {
     "Tinkoff": "Тинькофф",
-    "Rosbank": "Росбанк",
+    "RosBank": "Росбанк",
     "QIWI": "QIWI",
     "YandexMoneyNew": "ЮMoney"
 }
 
+OPERATION_TYPES = {
+    "T+T": ("BUY", "SELL"),
+    "M+M": ("SELL", "BUY"),
+    "T+M": ("BUY", "BUY"),
+    "M+T": ("SELL", "BUY")
+}
+
+SYMBOLS = [
+    "ETHUSDT",
+    "ETHBTC",
+    "ETHBUSD",
+    "BTCBUSD",
+    "BTCUSDT",
+    "BUSDUSDT"
+]
