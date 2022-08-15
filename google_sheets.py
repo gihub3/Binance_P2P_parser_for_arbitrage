@@ -23,7 +23,7 @@ service = apiclient.discovery.build('sheets', 'v4', http=http_auth)
 
 
 def fill_whole_table(data):
-    print(data)
+    # print(data)
     values = service.spreadsheets().values().batchUpdate(
         spreadsheetId=GOOGLE_SHEET_ID,
         body={
@@ -35,7 +35,7 @@ def fill_whole_table(data):
             ]
         }).execute()
 
-    pprint(values)
+    # pprint(values)
 
 
 def start_spreadsheet():
@@ -58,4 +58,5 @@ def start_spreadsheet():
     except Exception:
         sell_limit = 0
 
-    fill_whole_table(make_total_data_array("RUB", bank_amount))
+    fill_whole_table(make_total_data_array("RUB", bank_amount, {"BUY": buy_limit,
+                                                                "SELL": sell_limit}))

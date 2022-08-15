@@ -6,7 +6,7 @@ import asyncio
 def calculate_profit(bank_amount, from_asset_p2p, to_asset_p2p, exchange_price, ratio=1):
     amount_after_operation = (bank_amount / from_asset_p2p) * (exchange_price ** ratio) * to_asset_p2p
 
-    return bank_amount - amount_after_operation
+    return amount_after_operation - bank_amount
 
 
 def get_user_url(user_id):
@@ -15,7 +15,7 @@ def get_user_url(user_id):
     return url + user_id
 
 
-def make_total_data_array(fiat, bank_amount):
+def make_total_data_array(fiat, bank_amount, limits):
     total_array = []
     all_params_array = []
 
@@ -26,18 +26,22 @@ def make_total_data_array(fiat, bank_amount):
         for bank in BANKS_EN_RUS.keys():
             for asset_couple in ALL_ASSET_COUPLES:
                 all_params_array += get_all_params(
-                    *asset_couple, fiat, OPERATION_TYPES[operation_type], bank
+                    *asset_couple, fiat, OPERATION_TYPES[operation_type], bank, limits
                 )
+
     start_time = time.time()
 
     asyncio.run(load_data(all_params_array))
 
     end_time = time.time()
     print(end_time - start_time)
+    all_data.sort(key=lambda s: s[0])
+    # print(all_data)
 
-    for idx in range((len(sorted(all_data, key=lambda s: s[0])) - 6) // 2):
+    for idx in range(len(all_data) // 2):
         from_asset = all_data[2 * idx][1]
         to_asset = all_data[2 * idx + 1][1]
+
         if from_asset["asset"] + to_asset["asset"] in SYMBOLS:
             cur_symbol = from_asset["asset"] + to_asset["asset"]
             ratio = 1
@@ -55,13 +59,13 @@ def make_total_data_array(fiat, bank_amount):
                                   list(OPERATION_TYPES.keys())[idx // 64])
         total_array.append(analytics)
 
-    print(total_array)
+    # print(total_array)
     return total_array
 
 
-def get_all_params(from_asset, to_asset, fiat, order_type, bank):
-    from_asset_info = form_asset_info_params(from_asset, fiat, order_type[0], pay_types=[bank])
-    to_asset_info = form_asset_info_params(to_asset, fiat, order_type[1], pay_types=[bank])
+def get_all_params(from_asset, to_asset, fiat, order_type, bank, limits):
+    from_asset_info = form_asset_info_params(from_asset, fiat, order_type[0], pay_types=[bank], limit=limits[order_type[0]])
+    to_asset_info = form_asset_info_params(to_asset, fiat, order_type[1], pay_types=[bank], limit=limits[order_type[1]])
 
     return [from_asset_info, to_asset_info]
 

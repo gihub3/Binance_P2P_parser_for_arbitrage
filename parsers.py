@@ -3,7 +3,7 @@ import asyncio
 from aiohttp import ClientSession
 
 
-def form_asset_info_params(asset, fiat, trade_type, pay_types=None, trans_amount=0,
+def form_asset_info_params(asset, fiat, trade_type, pay_types=None, limit=0,
                            merchant_check=False, page=1, publisher_type=None, row=1):
     if pay_types is None:
         pay_types = []
@@ -17,7 +17,7 @@ def form_asset_info_params(asset, fiat, trade_type, pay_types=None, trans_amount
         "publisherType": publisher_type,
         "rows": row,
         "tradeType": trade_type,
-        "transAmount": trans_amount
+        "transAmount": limit
     }
     return params
 
@@ -27,7 +27,7 @@ def make_asset_info_dict(data):
     result = {
         "asset": needed_data["adv"]["asset"],
         "price": needed_data["adv"]["price"],
-        "payment_system": needed_data["adv"]["tradeMethods"][0]["tradeMethodName"],
+        "payment_system": ', '.join(dct["tradeMethodName"] for dct in needed_data["adv"]["tradeMethods"] if dct["tradeMethodName"] != None),
         "user_nickname": needed_data["advertiser"]["nickName"],
         "user_id": needed_data["advertiser"]["userNo"]
     }
@@ -73,7 +73,7 @@ async def get_all_data(session, params, num):
 
         if "symbol" in params:
             all_symbols_data[params["symbol"]] = make_price_dict(resp_json)["price"]
-            time.sleep(1)
+            # time.sleep(0.5)
         else:
             all_data.append((num, make_asset_info_dict(resp_json)))
 
